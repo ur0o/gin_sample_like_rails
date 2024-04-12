@@ -2,15 +2,13 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"net/http"
+
+	"gin_sample/config"
 )
 
 func main() {
 	engine := gin.Default()
 
-	engine.GET("/", func(c *gin.Context) {
-		c.String(http.StatusOK, "Hello, world!")
-	})
-
+	config.SetRouting(engine)
 	engine.Run(":8080")
 }
